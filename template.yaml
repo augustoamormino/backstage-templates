@@ -58,12 +58,13 @@ spec:
           owner: ${{ parameters.owner }}
 
     - id: publish
-      name: Publish
-      action: publish:github
+      name: Publish AzureDevOps
+      action: publish:azure
       input:
-        allowedHosts: ['github.com','dev.azure.com']
+        allowedHosts: ['dev.azure.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: main
 
     # - id: register
     #   name: Register
